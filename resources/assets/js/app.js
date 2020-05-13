@@ -10,6 +10,7 @@ require('./bootstrap');
  import VueRouter from 'vue-router';
  import HeaderComponent from "./components/HeaderComponent.vue";
  import TaskListComponent from "./components/TaskListComponent";
+ import TaskShowComponent from "./components/TaskShowComponent";
 
 window.Vue = require('vue');
 
@@ -31,6 +32,12 @@ window.Vue = require('vue');
              path: '/tasks',
              name: 'task.list',
              component: TaskListComponent
+         },
+         {
+             path: '/tasks/:taskId',
+             name: 'task.show',
+             component: TaskShowComponent,
+             props: true
          },
      ]
  });
